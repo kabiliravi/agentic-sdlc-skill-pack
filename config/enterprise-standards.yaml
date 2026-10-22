@@ -1,0 +1,28 @@
+enterprise:
+  organization_code: ORG
+  data_classification: internal
+  approved_languages: [java, python, typescript, go]
+  approved_frameworks: [] # set actual framework versions
+  architecture_style: domain-aligned-services
+  architecture_reviews: [solution-architect, security-architect, data-architect, operations]
+  security:
+    identity: workload-federation
+    encryption_at_rest: required
+    tls_in_transit: required
+    secret_storage: cloud-secret-manager
+    sast_required: true
+    sca_required: true
+    dast_required: true
+    penetration_test_required: risk-based-pre-prod
+    threat_model_required: true
+  quality:
+    minimum_unit_line_coverage_pct: 80 # example policy: customize and supplement with risk/branch coverage
+    fail_on_critical_vulnerabilities: true
+    require_peer_review: true
+  nfr_defaults: {} # do not infer production SLOs from this placeholder
+  naming:
+    pattern: '{org}-{product}-{component}-{env}-{region}-{resource}-{nn}'
+  finance:
+    labor_loaded_monthly_rates: {} # role -> verified rate
+    cloud_unit_rates: {} # SKU+region -> rate, currency, effective date
+    licenses: []

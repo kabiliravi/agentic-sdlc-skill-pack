@@ -1,0 +1,51 @@
+# Replace values before invoking the skills. Null means unknown, not approved.
+project:
+  id: SAMPLE
+  name: Example Product
+  owner: null
+  sow: null
+  size: M # XS|S|M|L|XL; may be inferred from SOW
+  kickoff: null # YYYY-MM-DD
+  target_go_live: null
+  currency: USD
+  timezone: America/New_York
+  working_days_per_week: 5
+  work_hours_per_day: 8
+  contingency_pct: 15
+  default_utilization_pct: 80
+inputs:
+  requirements: inputs/requirements/
+  business_analysis: inputs/business-analysis/
+  hld: inputs/architecture/
+  security: inputs/security/
+  detailed_design: inputs/design/
+  nfr: inputs/nfr/
+cloud:
+  provider: gcp # gcp|aws|azure
+  region: null
+  environment_list: [dev, test, staging, prod]
+  iac_engine: terraform
+work_tracking:
+  provider: jira # jira|azure-devops
+  project_key: null
+  base_url: null
+  hierarchy_mapping: null
+repository:
+  provider: github # github|gitlab|azure-devops
+  organization: null
+  visibility: private
+publishing:
+  dry_run: true
+  destinations: [] # confluence|github-wiki|gitlab-wiki|sharepoint|onedrive
+  artifact_globs: [] # explicit allowlist, no implicit '*'
+system_tests:
+  language: python # nodejs|java|python|ruby|go|other
+  framework: pytest
+  endpoint: null
+cicd:
+  platform: github-actions # github-actions|jenkins|gitlab-ci|azure-pipelines|other
+  release_strategy: canary
+execution:
+  dry_run: true
+  require_approval_for_external_writes: true
+  require_approval_for_production: true
