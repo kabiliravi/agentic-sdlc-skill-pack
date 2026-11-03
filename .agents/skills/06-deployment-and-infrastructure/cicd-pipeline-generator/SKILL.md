@@ -4,6 +4,13 @@ description: Generate full gated CI/CD pipelines for Jenkins GitHub Actions GitL
 ---
 
 # Cicd Pipeline Generator
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Inputs
 Read `cicd.platform` from project config: `github-actions|jenkins|gitlab-ci|azure-pipelines|other`. Read repository inventory, application/IaC technologies, environments, branching/release model, required approvals and supply-chain security standard.
 ## Build CI stages

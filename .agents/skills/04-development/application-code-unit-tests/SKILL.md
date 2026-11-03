@@ -4,6 +4,13 @@ description: Generate production-grade implementation per approved deployable re
 ---
 
 # Application Code Unit Tests
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Preflight
 Read design baseline and acceptance criteria, language/framework versions, approved enterprise tech stack, interface and data contracts, security requirements, repo template, pipeline rules. Refuse to guess critical ambiguity: record a blocking design question; other work may be scaffolded behind it.
 ## Implement per repo

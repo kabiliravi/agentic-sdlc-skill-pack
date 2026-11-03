@@ -4,6 +4,13 @@ description: Design and optionally create component repositories with centrally 
 ---
 
 # Repo Topology Bootstrap
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Determine repo topology
 Classify building blocks as independently deployable services/frontends/jobs, shared runtime libraries, API contracts, platform IaC modules, environment/live IaC, policy-as-code and tooling. One repo per deployable by default per user request; shared code separate only with clear ownership/versioning/reuse justification. Distinguish Terraform module source repos from environment state/live-stack repos.
 ## Repo design

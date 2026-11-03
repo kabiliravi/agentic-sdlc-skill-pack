@@ -4,6 +4,13 @@ description: Selectively publish approved architecture planning and design artif
 ---
 
 # Artifact Publisher
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Selection and classification
 Read user-selected artifact globs, destination(s), folder/space/project, ACL and classification from `config/project.yaml` and `outputs/publication-manifest.csv`. Default `dry_run: true`. Never upload all content by default or publish secrets, internal credentials, sensitive customer records or unapproved artifacts.
 ## Transform and publish

@@ -4,6 +4,13 @@ description: Map capability epic story spreadsheets to Jira or Azure DevOps and 
 ---
 
 # Jira Ado Backlog Sync
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Configuration
 Read `config/project.yaml` (`work_tracking.provider` = `jira` or `azure-devops`, project, base URL/organization, hierarchy mappings, custom fields, sprint mapping). Never embed tokens in Markdown, YAML, CSV or logs; use secret environment or authorized connector.
 ## Jira

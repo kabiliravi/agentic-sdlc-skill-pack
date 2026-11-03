@@ -4,6 +4,13 @@ description: Create approved component-level solution/security detailed design i
 ---
 
 # Architecture Detailed Design
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Input
 Use HLD, DFDs, context/container designs, ERD, sequences, state/activity diagrams, NFR, security architecture, threat model, ADRs and component catalog. Record unapproved decisions as proposals.
 ## Per component design

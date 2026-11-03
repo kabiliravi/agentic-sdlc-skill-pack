@@ -4,6 +4,13 @@ description: Install the latest stable PHP with the php-cgi binary, wire it into
 ---
 
 # Apache PHP-CGI Setup
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 Installs the newest PHP release available from the trusted upstream packager (Ondřej Surý PPA/sury.org on Debian/Ubuntu, Remi on RHEL/Rocky/Alma), installs `php-cgi`, enables Apache's CGI modules, registers `.php` files to run through `php-cgi`, runs `apachectl configtest`, restarts Apache and smoke-tests it.
 
 ## Required author choices

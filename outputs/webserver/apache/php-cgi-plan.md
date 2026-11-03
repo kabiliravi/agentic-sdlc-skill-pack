@@ -1,4 +1,12 @@
 
+<!--
+Skill Pack Version: 1.0.0
+Skill Pack License: GPL-3.0-only
+Maintainer: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
+
 ==> Detected Debian GNU/Linux 13 (trixie) (family: debian); mode: DRY-RUN
 
 ==> Installing prerequisites and Apache

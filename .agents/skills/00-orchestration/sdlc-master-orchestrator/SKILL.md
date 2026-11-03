@@ -4,6 +4,13 @@ description: Orchestrate artifact-driven enterprise SDLC from analysis and archi
 ---
 
 # Sdlc Master Orchestrator
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Trigger and scope
 Use when asked to execute the complete SDLC agent chain or coordinate dependent skills. Drive a gated **plan -> backlog -> design -> repositories -> implementation and IaC -> tests -> CI/CD -> release** workflow.
 ## Workflow

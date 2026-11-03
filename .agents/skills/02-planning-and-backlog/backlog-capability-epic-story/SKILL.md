@@ -4,6 +4,13 @@ description: Build an import-ready XLSX backlog of capabilities, epics and imple
 ---
 
 # Backlog Capability Epic Story
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Procedure
 1. Read signed requirements, business rules, NFRs, roadmap WBS and component catalog. Group customer/business outcomes into `CAP-####`; decompose into bounded `EPIC-####` and independently testable `STORY-####` with parent linkage.
 2. Create vertical slices across frontend, API, data, integrations, infra and security. Enabling technical work uses explicit technical stories, not invisible assumptions. Ensure build, test, IaC, observability, remediation, documentation, support and release work are represented.

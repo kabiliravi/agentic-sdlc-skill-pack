@@ -4,6 +4,13 @@ description: Generate environment cloud platform code repo artifact and resource
 ---
 
 # Artifact Naming Standards
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Method
 Ingest company conventions, cloud provider limits and enterprise resource inventory, project/business unit, region, environment, resource type, data sensitivity and uniqueness scope. Specify pattern tokens like `{org}-{product}-{component}-{env}-{region}-{resource}-{nn}`; apply provider-specific length, character-set and global uniqueness restrictions, e.g. storage buckets/accounts and DNS. Distinguish human-friendly logical names from immutable physical IDs and external object display names.
 For each category establish pattern, examples, constraints, case, separator, uniqueness scope, ownership, tags/labels, exceptions and rename/migration rules. Cover capability/epic/story IDs, cloud resources, accounts/projects/subscriptions, repos, microservices, frontend/backend packages, DB schemas/tables, queues/topics, endpoints, secrets **names only**, observability metrics, pipelines, environments, branches, container images, artifacts, IaC modules and test suites.
