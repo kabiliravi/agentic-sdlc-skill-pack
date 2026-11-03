@@ -4,10 +4,10 @@ This is a **reusable, project-configurable agent skill library**, not precompute
 
 ## Install
 
-- **Recommended shared canonical location:** copy `.agents/skills/<skill-name>/SKILL.md` and the `config`, `schemas`, and `examples` folders into your repository. OpenAI Codex discovers `.agents/skills`; GitHub Copilot also documents `.agents/skills` as a project skill location. Verify discovery for your installed tool version.
+- **Recommended shared canonical location:** copy the skill folders and the `config`, `schemas`, and `examples` folders into your repository. OpenAI Codex discovers `.agents/skills`; GitHub Copilot also documents `.agents/skills` as a project skill location. Verify discovery for your installed tool version.
 - **GitHub Copilot preferred alternative:** copy the skill folders into `.github/skills/`.
 - **Claude Code:** copy the skill folders into `.claude/skills/` (or `~/.claude/skills/` for personal use).
-- The ZIP includes a **single canonical copy** of all skills under `.agents/skills/` to avoid duplicate name collisions. For Claude Code, copy rather than just assume `.agents/skills` is discovered.
+- The ZIP includes a **single canonical copy** of all skills under `.agents/skills/`, grouped into SDLC phase folders (see Inventory). Most agents discover skills only one level deep (`skills/<skill-name>/SKILL.md`), so when installing, copy each `<phase>/<skill-name>` folder **flat** into the target skills directory (e.g. `cp -r .agents/skills/*/* .claude/skills/`). Skill names are unique, so flattening causes no collisions. For Claude Code, copy rather than just assume `.agents/skills` is discovered.
 - Run agents from project root so relative paths (`config/...`, `inputs/...`, `outputs/...`) resolve.
 
 ## Set up
@@ -18,23 +18,25 @@ This is a **reusable, project-configurable agent skill library**, not precompute
 4. Verify spreadsheets are real `.xlsx` with formulas and validation, and diagrams are editable `.drawio` XML; a Markdown skill itself **instructs** a capable agent to generate these files—it cannot guarantee tools are installed.
 5. Review gates and the diff report. External writes, cost-incurring actions and production changes require explicit approvals.
 
-## Inventory
+## Inventory (grouped by SDLC phase)
 
-| Skill | Primary outputs |
-| --- | --- |
-| `requirements-business-analysis` | requirements, business rules, NFR matrix |
-| `roadmap-gantt-budget` | `project-plan.xlsx`, milestone Gantt, resource loading, budget |
-| `backlog-capability-epic-story` | `product-backlog.xlsx` capability/epic/story breakdown |
-| `jira-ado-backlog-sync` | Jira/ADO import sheets, mapping, dry-run synchronization |
-| `architecture-detailed-design` | `.drawio` editable diagrams and component Markdown specs |
-| `artifact-publisher` | Confluence/Wiki/SharePoint/OneDrive selective upload manifest |
-| `repo-topology-bootstrap` | GitHub/GitLab/ADO repo topology, templates and creation plan |
-| `artifact-naming-standards` | `naming-conventions.xlsx` with naming constraints and registry |
-| `application-code-unit-tests` | deployable app sources + unit/component tests |
-| `cloud-iac-generator` | GCP/AWS/Azure modular IaC and safe plan preview |
-| `api-system-test-generator` | stack-selectable API system tests |
-| `cicd-pipeline-generator` | Jenkins/GitHub/GitLab/ADO CI/CD with gates |
-| `sdlc-master-orchestrator` | unified gated workflow and release/hypercare evidence |
+Skills live under `.agents/skills/<phase>/<skill-name>/SKILL.md`.
+
+| Phase folder | Skill | Primary outputs |
+| --- | --- | --- |
+| `00-orchestration` | `sdlc-master-orchestrator` | unified gated workflow and release/hypercare evidence |
+| `01-requirements-analysis` | `requirements-business-analysis` | requirements, business rules, NFR matrix |
+| `02-planning-and-backlog` | `roadmap-gantt-budget` | `project-plan.xlsx`, milestone Gantt, resource loading, budget |
+| `02-planning-and-backlog` | `backlog-capability-epic-story` | `product-backlog.xlsx` capability/epic/story breakdown |
+| `02-planning-and-backlog` | `jira-ado-backlog-sync` | Jira/ADO import sheets, mapping, dry-run synchronization |
+| `03-architecture-and-design` | `architecture-detailed-design` | `.drawio` editable diagrams and component Markdown specs |
+| `03-architecture-and-design` | `artifact-naming-standards` | `naming-conventions.xlsx` with naming constraints and registry |
+| `04-development` | `repo-topology-bootstrap` | GitHub/GitLab/ADO repo topology, templates and creation plan |
+| `04-development` | `application-code-unit-tests` | deployable app sources + unit/component tests |
+| `05-testing` | `api-system-test-generator` | stack-selectable API system tests |
+| `06-deployment-and-infrastructure` | `cloud-iac-generator` | GCP/AWS/Azure modular IaC and safe plan preview |
+| `06-deployment-and-infrastructure` | `cicd-pipeline-generator` | Jenkins/GitHub/GitLab/ADO CI/CD with gates |
+| `07-documentation-and-publishing` | `artifact-publisher` | Confluence/Wiki/SharePoint/OneDrive selective upload manifest |
 
 ## Boundary and assumptions
 
