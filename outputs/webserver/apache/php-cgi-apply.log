@@ -1,0 +1,157 @@
+
+==> Detected Debian GNU/Linux 13 (trixie) (family: debian); mode: APPLY
+
+==> Installing prerequisites and Apache
++ apt-get update -y
+Hit:1 http://security.debian.org/debian-security trixie-security InRelease
+Hit:2 http://deb.debian.org/debian trixie InRelease
+Hit:3 http://deb.debian.org/debian trixie-updates InRelease
+Ign:4 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Ign:5 https://download.webmin.com/download/newkey/repository stable InRelease
+Hit:6 https://downloads.claude.ai/claude-code/apt/latest latest InRelease
+Hit:7 https://pkg.jenkins.io/debian-stable binary/ Release
+Ign:5 https://download.webmin.com/download/newkey/repository stable InRelease
+Ign:5 https://download.webmin.com/download/newkey/repository stable InRelease
+Err:5 https://download.webmin.com/download/newkey/repository stable InRelease
+  SSL connection failed: error:0A000086:SSL routines::certificate verify failed / Success [IP: 45.76.69.64 443]
+Reading package lists...
+W: Failed to fetch https://download.webmin.com/download/newkey/repository/dists/stable/InRelease  SSL connection failed: error:0A000086:SSL routines::certificate verify failed / Success [IP: 45.76.69.64 443]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
++ apt-get install -y apache2 ca-certificates curl lsb-release gnupg
+Reading package lists...
+Building dependency tree...
+Reading state information...
+apache2 is already the newest version (2.4.69-1~deb13u1).
+apache2 set to manually installed.
+ca-certificates is already the newest version (20250419+deb13u1).
+curl is already the newest version (8.14.1-2+deb13u7).
+lsb-release is already the newest version (12.1-1).
+lsb-release set to manually installed.
+gnupg is already the newest version (2.4.7-21+deb13u1).
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+
+==> Adding upstream PHP repository (latest PHP builds)
++ curl -fsSLo /tmp/debsuryorg-archive-keyring.deb https://packages.sury.org/debsuryorg-archive-keyring.deb
++ dpkg -i /tmp/debsuryorg-archive-keyring.deb && rm -f /tmp/debsuryorg-archive-keyring.deb
+Selecting previously unselected package debsuryorg-archive-keyring.
+(Reading database ... 90705 files and directories currently installed.)
+Preparing to unpack .../debsuryorg-archive-keyring.deb ...
+Unpacking debsuryorg-archive-keyring (2025.11.18) ...
+Setting up debsuryorg-archive-keyring (2025.11.18) ...
++ echo "deb [signed-by=/usr/share/keyrings/debsuryorg-archive-keyring.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php-sury.list
++ apt-get update -y
+Hit:1 http://deb.debian.org/debian trixie InRelease
+Hit:2 http://deb.debian.org/debian trixie-updates InRelease
+Hit:3 http://security.debian.org/debian-security trixie-security InRelease
+Hit:4 https://downloads.claude.ai/claude-code/apt/latest latest InRelease
+Ign:5 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Ign:6 https://download.webmin.com/download/newkey/repository stable InRelease
+Hit:7 https://pkg.jenkins.io/debian-stable binary/ Release
+Get:8 https://packages.sury.org/php trixie InRelease [6,129 B]
+Get:10 https://packages.sury.org/php trixie/main amd64 Packages [287 kB]
+Ign:6 https://download.webmin.com/download/newkey/repository stable InRelease
+Ign:6 https://download.webmin.com/download/newkey/repository stable InRelease
+Err:6 https://download.webmin.com/download/newkey/repository stable InRelease
+  SSL connection failed: error:0A000086:SSL routines::certificate verify failed / Success [IP: 45.76.69.64 443]
+Fetched 293 kB in 8s (38.3 kB/s)
+Reading package lists...
+W: Failed to fetch https://download.webmin.com/download/newkey/repository/dists/stable/InRelease  SSL connection failed: error:0A000086:SSL routines::certificate verify failed / Success [IP: 45.76.69.64 443]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+
+==> Target PHP version: 8.6
++ apt-get install -y php8.6-cgi php8.6-cli php8.6-common php8.6-mbstring php8.6-xml php8.6-curl php8.6-zip
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  php-common php8.6-readline
+Suggested packages:
+  php-pear
+The following NEW packages will be installed:
+  php-common php8.6-cgi php8.6-cli php8.6-common php8.6-curl php8.6-mbstring
+  php8.6-readline php8.6-xml php8.6-zip
+0 upgraded, 9 newly installed, 0 to remove and 3 not upgraded.
+Need to get 10.7 MB of archives.
+After this operation, 52.7 MB of additional disk space will be used.
+Get:1 https://packages.sury.org/php trixie/main amd64 php-common all 2:101+0~20261021.78+debian13~1.gbp53f25f [14.0 kB]
+Get:2 https://packages.sury.org/php trixie/main amd64 php8.6-common amd64 8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e [808 kB]
+Get:3 https://packages.sury.org/php trixie/main amd64 php8.6-readline amd64 8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e [12.9 kB]
+Get:4 https://packages.sury.org/php trixie/main amd64 php8.6-cli amd64 8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e [3,076 kB]
+Get:5 https://packages.sury.org/php trixie/main amd64 php8.6-cgi amd64 8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e [6,046 kB]
+Get:6 https://packages.sury.org/php trixie/main amd64 php8.6-curl amd64 8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e [42.7 kB]
+Get:7 https://packages.sury.org/php trixie/main amd64 php8.6-mbstring amd64 8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e [439 kB]
+Get:8 https://packages.sury.org/php trixie/main amd64 php8.6-xml amd64 8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e [198 kB]
+Get:9 https://packages.sury.org/php trixie/main amd64 php8.6-zip amd64 8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e [32.2 kB]
+Fetched 10.7 MB in 5s (2,335 kB/s)
+Selecting previously unselected package php-common.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 90718 files and directories currently installed.)
+Preparing to unpack .../0-php-common_2%3a101+0~20261021.78+debian13~1.gbp53f25f_all.deb ...
+Unpacking php-common (2:101+0~20261021.78+debian13~1.gbp53f25f) ...
+Selecting previously unselected package php8.6-common.
+Preparing to unpack .../1-php8.6-common_8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e_amd64.deb ...
+Unpacking php8.6-common (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Selecting previously unselected package php8.6-readline.
+Preparing to unpack .../2-php8.6-readline_8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e_amd64.deb ...
+Unpacking php8.6-readline (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Selecting previously unselected package php8.6-cli.
+Preparing to unpack .../3-php8.6-cli_8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e_amd64.deb ...
+Unpacking php8.6-cli (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Selecting previously unselected package php8.6-cgi.
+Preparing to unpack .../4-php8.6-cgi_8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e_amd64.deb ...
+Unpacking php8.6-cgi (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Selecting previously unselected package php8.6-curl.
+Preparing to unpack .../5-php8.6-curl_8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e_amd64.deb ...
+Unpacking php8.6-curl (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Selecting previously unselected package php8.6-mbstring.
+Preparing to unpack .../6-php8.6-mbstring_8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e_amd64.deb ...
+Unpacking php8.6-mbstring (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Selecting previously unselected package php8.6-xml.
+Preparing to unpack .../7-php8.6-xml_8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e_amd64.deb ...
+Unpacking php8.6-xml (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Selecting previously unselected package php8.6-zip.
+Preparing to unpack .../8-php8.6-zip_8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e_amd64.deb ...
+Unpacking php8.6-zip (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Setting up php-common (2:101+0~20261021.78+debian13~1.gbp53f25f) ...
+Created symlink '/etc/systemd/system/timers.target.wants/phpsessionclean.timer' → '/usr/lib/systemd/system/phpsessionclean.timer'.
+Setting up php8.6-common (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Creating config file /etc/php/8.6/mods-available/calendar.ini with new version
+Creating config file /etc/php/8.6/mods-available/ctype.ini with new version
+Creating config file /etc/php/8.6/mods-available/exif.ini with new version
+Creating config file /etc/php/8.6/mods-available/fileinfo.ini with new version
+Creating config file /etc/php/8.6/mods-available/ffi.ini with new version
+Creating config file /etc/php/8.6/mods-available/ftp.ini with new version
+Creating config file /etc/php/8.6/mods-available/gettext.ini with new version
+Creating config file /etc/php/8.6/mods-available/iconv.ini with new version
+Creating config file /etc/php/8.6/mods-available/pdo.ini with new version
+Creating config file /etc/php/8.6/mods-available/phar.ini with new version
+Creating config file /etc/php/8.6/mods-available/posix.ini with new version
+Creating config file /etc/php/8.6/mods-available/shmop.ini with new version
+Creating config file /etc/php/8.6/mods-available/sockets.ini with new version
+Creating config file /etc/php/8.6/mods-available/sysvmsg.ini with new version
+Creating config file /etc/php/8.6/mods-available/sysvsem.ini with new version
+Creating config file /etc/php/8.6/mods-available/sysvshm.ini with new version
+Creating config file /etc/php/8.6/mods-available/tokenizer.ini with new version
+Setting up php8.6-zip (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Creating config file /etc/php/8.6/mods-available/zip.ini with new version
+Setting up php8.6-xml (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Creating config file /etc/php/8.6/mods-available/dom.ini with new version
+Creating config file /etc/php/8.6/mods-available/simplexml.ini with new version
+Creating config file /etc/php/8.6/mods-available/xml.ini with new version
+Creating config file /etc/php/8.6/mods-available/xmlreader.ini with new version
+Creating config file /etc/php/8.6/mods-available/xmlwriter.ini with new version
+Creating config file /etc/php/8.6/mods-available/xsl.ini with new version
+Setting up php8.6-readline (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Creating config file /etc/php/8.6/mods-available/readline.ini with new version
+Setting up php8.6-curl (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Creating config file /etc/php/8.6/mods-available/curl.ini with new version
+Setting up php8.6-mbstring (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+Creating config file /etc/php/8.6/mods-available/mbstring.ini with new version
+Setting up php8.6-cli (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+update-alternatives: using /usr/bin/php8.6 to provide /usr/bin/php (php) in auto mode
+update-alternatives: using /usr/bin/phar8.6 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: using /usr/bin/phar.phar8.6 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+Creating config file /etc/php/8.6/cli/php.ini with new version
+Setting up php8.6-cgi (8.6.0~rc3-1+0~20261012.3+debian13~1.gbpecfa4e) ...
+update-alternatives: using /usr/bin/php-cgi8.6 to provide /usr/bin/php-cgi (php-cgi) in auto mode
+update-alternatives: using /usr/lib/cgi-bin/php8.6 to provide /usr/lib/cgi-bin/php (php-cgi-bin) in auto mode
+Creating config file /etc/php/8.6/cgi/php.ini with new version
