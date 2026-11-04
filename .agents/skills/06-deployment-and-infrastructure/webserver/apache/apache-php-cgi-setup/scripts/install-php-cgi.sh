@@ -63,8 +63,15 @@ debian_setup() {
   fi
 
   if [[ "$PHP_VERSION" == "latest" ]]; then
-    PHP_VERSION="$(apt-cache pkgnames 2>/dev/null | grep -E '^php[0-9]+\.[0-9]+-cgi$' \
-      | sed -E 's/^php([0-9.]+)-cgi$/\1/' | sort -V | tail -1 || true)"
+    # Highest X.Y whose candidate package is a stable release (skip ~alpha/~beta/~rc builds).
+    PHP_VERSION=""
+    for v in $(apt-cache pkgnames 2>/dev/null | grep -E '^php[0-9]+\.[0-9]+-cgi$' \
+        | sed -E 's/^php([0-9.]+)-cgi$/\1/' | sort -Vr); do
+      cand="$(apt-cache policy "php${v}-cgi" 2>/dev/null | awk '/Candidate:/{print $2}')"
+      if [[ -n "$cand" && "$cand" != "(none)" && ! "$cand" =~ ~(alpha|beta|rc|RC) ]]; then
+        PHP_VERSION="$v"; break
+      fi
+    done
     if [[ -z "$PHP_VERSION" ]]; then
       [[ $APPLY -eq 1 ]] && die "Could not resolve latest php-cgi package"
       PHP_VERSION="X.Y"; echo "[dry-run] latest version resolves after the repo is added"

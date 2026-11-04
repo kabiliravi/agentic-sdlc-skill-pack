@@ -1,0 +1,1 @@
+- [2026-11-03] apache-php-cgi-setup: no webserver.apache settings in config/project.yaml; defaults used (latest PHP, mbstring xml curl zip).
