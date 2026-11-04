@@ -4,6 +4,13 @@ description: Generate gated SDLC roadmap, milestone Gantt, staffing plan, infras
 ---
 
 # Roadmap Gantt Budget
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Sizing policy (defaults, not empirical guarantees)
 Use T-shirt tiers based on SOW **and** complexity, integrations, risk, environments and compliance: `XS` 3-6 months; `S` 6-12 months; `M` 12-24 months; `L` 24-48 months; `XL` >48 months. Ranges are planning policy, not proof of delivery time. If specified delivery date conflicts with scope, issue alternative scenarios (scope/time/capacity) and feasibility warnings.
 ## Activities

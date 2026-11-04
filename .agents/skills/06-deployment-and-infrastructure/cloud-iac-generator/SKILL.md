@@ -4,6 +4,13 @@ description: Generate secure modular infrastructure-as-code and environment over
 ---
 
 # Cloud Iac Generator
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Required author choices
 Read `config/project.yaml`: `cloud.provider` = `gcp|aws|azure`; `iac.engine` = `terraform|opentofu|pulumi|cloudformation|cdk|bicep` compatible with the chosen platform; account/subscription/project, approved regions, runtime services, security baseline, connectivity and environments. Default is Terraform if no engine is set, but label as an assumption. No real provisioning without approval.
 ## Steps

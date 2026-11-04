@@ -4,6 +4,13 @@ description: Convert business requirements, diagrams and NFRs into validated req
 ---
 
 # Requirements Business Analysis
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Intake
 Read business case/SOW, scope and assumptions; actor/use-case diagrams, activity/BPMN flows, state diagrams, ERDs and sequences; FR/NFR lists; regulations, constraints, integration catalog, SLAs and enterprise standards. Parse diagram exports only when supported; request sources if only a non-readable binary is supplied.
 ## Steps

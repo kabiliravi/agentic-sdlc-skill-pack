@@ -4,6 +4,13 @@ description: Generate end-to-end API system test suites with configurable Node.j
 ---
 
 # Api System Test Generator
+<!--
+Version: 1.0.0
+License: GPL-3.0-only
+Author: Nasim Kabiliravi <kabiliravi@gmail.com>
+Website: http://kabiliravi.com
+LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/
+-->
 ## Configuration
 `system_tests.language` = `nodejs|java|python|ruby|go|other` and framework selected by author (e.g. Playwright API, Jest+Supertest, REST Assured, pytest+httpx, RSpec). Read API specs, domain rules, state workflows, authentication design, test env and synthetic data requirements.
 ## Test design

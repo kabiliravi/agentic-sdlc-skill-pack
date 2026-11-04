@@ -1,4 +1,5 @@
 # Agentic SDLC Skill Pack — Copilot / Codex / Claude
+<!-- Version: 1.0.0 | License: GPL-3.0-only | Author: Nasim Kabiliravi <kabiliravi@gmail.com> | Website: http://kabiliravi.com | LinkedIn: https://www.linkedin.com/in/nasim-kabi-liravi/ -->
 
 This is a **reusable, project-configurable agent skill library**, not precomputed plans, real cloud quotes, deployed systems or preconfigured live integrations. Each independently invokable skill is a Markdown `SKILL.md` with YAML frontmatter. Source and output contracts live in `config/` and `schemas/`.
 
